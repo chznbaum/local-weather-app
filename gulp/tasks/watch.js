@@ -19,7 +19,7 @@ gulp.task('watch', function() {
   });
 
   watch('./app/assets/js/**/*.js', function() {
-    gulp.start('scrptsRefresh');
+    gulp.start('scriptsRefresh');
   });
 });
 
