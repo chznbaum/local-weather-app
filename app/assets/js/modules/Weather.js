@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import moment from 'moment';
 
 class Weather {
   constructor() {
@@ -100,10 +101,16 @@ class Weather {
         element.html('°F');
       });
       printPlaces.current.icon.addClass(`icon--${data.currently.icon}`);
-      printPlaces.current.temperature.html(data.currently.temperature);
-      printPlaces.current.low.html(data.daily.data[0].temperatureLow);
-      printPlaces.current.high.html(data.daily.data[0].temperatureHigh);
-      printPlaces.current.feelsLike.html(data.currently.apparentTemperature);
+      printPlaces.current.temperature.html(parseInt(data.currently.temperature));
+      printPlaces.current.low.html(
+        parseInt(data.daily.data[0].temperatureLow)
+      );
+      printPlaces.current.high.html(
+        parseInt(data.daily.data[0].temperatureHigh)
+      );
+      printPlaces.current.feelsLike.html(
+        parseInt(data.currently.apparentTemperature)
+      );
       printPlaces.current.description.html(`${data.currently.summary}`);
       if (data.currently.nearestStormDistance > 0) {
         let nearestStormDirection;
@@ -151,15 +158,19 @@ class Weather {
         const forecastLow = $(`${printPlaces.forecast.low}${day}`);
         const forecastHigh = $(`${printPlaces.forecast.high}${day}`);
         const forecastDescription = $(`${printPlaces.forecast.description}${day}`);
-        const date = data.daily.data[day].time;
-        const formattedDate = new Date(date * 1000).toDateString();
+        const date = new Date(data.daily.data[day].time * 1000);
+        const formattedDate = moment(date).format('dddd');
         forecastDate.html(formattedDate);
         forecastIcon.addClass(`icon--${data.daily.data[day].icon}`);
         forecastUnit.forEach(function(element) {
           element.html('°F');
         });
-        forecastLow.html(data.daily.data[day].temperatureLow);
-        forecastHigh.html(data.daily.data[day].temperatureHigh);
+        forecastLow.html(
+          parseInt(data.daily.data[day].temperatureLow)
+        );
+        forecastHigh.html(parseInt(
+          data.daily.data[day].temperatureHigh)
+        );
         forecastDescription.html(`${data.daily.data[day].summary}`);
       }
     }
