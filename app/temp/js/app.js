@@ -133,9 +133,9 @@ var Weather = function () {
         this.weatherLookup(coordinates);
       }
       function error(error) {
-        that.iplocate(that);
+        console.log(error);that.iplocate(that);
       }
-      navigator.geolocation.getCurrentPosition(success.bind(this), error(), options);
+      navigator.geolocation.getCurrentPosition(success.bind(this), error, options);
     }
   }, {
     key: 'iplocate',
