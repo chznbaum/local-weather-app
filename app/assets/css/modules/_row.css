@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--gutters > div {
+    padding-right: 1rem;
+
+    @mixin atMedium {
+      padding-right: 2.8125rem;
+    }
+  }
+
+  &__1 {
+    width: 100%;
+  }
+
+  &__1-2 {
+    width: calc(1/2 * 100%);
+  }
+
+  &__1-7 {
+    width: calc(1/7 * 100%);
+  }
+
+  @mixin atSmall {
+    &__small-1-2 {
+      width: calc(1/2 * 100%);
+    }
+  }
+
+  @mixin atMedium {
+    &__medium-1-7 {
+      width: calc(1/7 * 100%);
+    }
+  }
+}

@@ -28,153 +28,171 @@ copyright: Chazona Baum 2017
         <h1>Local Weather App</h1>
         <span class="locationDescription"></span>
       </div>
-      <div class="weather-box">
-        <h2 class="weather-box__heading">Current Weather</h2>
-        <i class="icon current-icon"></i>
-        <div class="weather-data">
-          <div class="weather-data__low">
-            <span class="weather-data__low__number current-low-number"></span>
-            <span class="weather-data__low__unit current-low-unit"></span>
-            low
+      <div class="container">
+        <div class="weather-box">
+          <h2 class="weather-box__heading weather-box__heading--bigger">Current Weather</h2>
+          <i class="icon current-icon"></i>
+          <div class="weather-data">
+            <div class="weather-data__low">
+              <span class="weather-data__low__number current-low-number"></span>
+              <span class="weather-data__low__unit current-low-unit"></span>
+              low
+            </div>
+            <div class="weather-data__temperature">
+              <span class="weather-data__temperature__number current-temperature-number"></span>
+              <span class="weather-data__temperature__unit current-temperature-unit"></span>
+            </div>
+            <div class="weather-data__high">
+              <span class="weather-data__high__number current-high-number"></span>
+              <span class="weather-data__high__unit current-high-unit"></span>
+              high
+            </div>
+            <div class="weather-data__feels-like">
+              Feels like 
+              <span class="weather-data__feels-like__number current-feels-like-number"></span>
+              <span class="weather-data__feels-like__unit current-feels-like-unit"></span>
+            </div>
+            <div class="weather-data__feels-like"></div>
+            <div class="weather-data__description current-description"></div>
           </div>
-          <div class="weather-data__temperature">
-            <span class="weather-data__temperature__number current-temperature-number"></span>
-            <span class="weather-data__temperature__unit current-temperature-unit"></span>
-          </div>
-          <div class="weather-data__high">
-            <span class="weather-data__high__number current-high-number"></span>
-            <span class="weather-data__high__unit current-high-unit"></span>
-            high
-          </div>
-          <div class="weather-data__feels-like">
-            Feels like 
-            <span class="weather-data__feels-like__number current-feels-like-number"></span>
-            <span class="weather-data__feels-like__unit current-feels-like-unit"></span>
-          </div>
-          <div class="weather-data__feels-like"></div>
-          <div class="weather-data__description current-description"></div>
         </div>
       </div>
-      <div class="weather-box weather-box__forecast">
-        <h2 class="weather-box__heading">Forecast</h2>
+      <div class="container">
+        <h2>Forecast</h2>
         <span class="forecast-summary"></span>
-        <div>
-          <h3 class="date-1">Date</h3>
-          <i class="icon forecast-icon-1"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-1"></span>
-              <span class="weather-data__low__unit forecast-low-unit-1"></span>
-              low
+        <div class="row row--gutters">
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-1">Date</h3>
+              <i class="icon forecast-icon-1"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-1"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-1"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-1"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-1"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-1"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-1"></span>
-              <span class="weather-data__high__unit forecast-high-unit-1"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-1"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-2">Date</h3>
-          <i class="icon forecast-icon-2"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-2"></span>
-              <span class="weather-data__low__unit forecast-low-unit-2"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-2">Date</h3>
+              <i class="icon forecast-icon-2"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-2"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-2"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-2"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-2"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-2"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-2"></span>
-              <span class="weather-data__high__unit forecast-high-unit-2"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-2"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-3">Date</h3>
-          <i class="icon forecast-icon-3"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-3"></span>
-              <span class="weather-data__low__unit forecast-low-unit-3"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-3">Date</h3>
+              <i class="icon forecast-icon-3"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-3"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-3"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-3"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-3"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-3"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-3"></span>
-              <span class="weather-data__high__unit forecast-high-unit-3"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-3"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-4">Date</h3>
-          <i class="icon forecast-icon-4"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-4"></span>
-              <span class="weather-data__low__unit forecast-low-unit-4"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-4">Date</h3>
+              <i class="icon forecast-icon-4"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-4"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-4"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-4"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-4"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-4"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-4"></span>
-              <span class="weather-data__high__unit forecast-high-unit-4"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-4"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-5">Date</h3>
-          <i class="icon forecast-icon-5"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-5"></span>
-              <span class="weather-data__low__unit forecast-low-unit-5"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-5">Date</h3>
+              <i class="icon forecast-icon-5"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-5"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-5"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-5"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-5"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-5"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-5"></span>
-              <span class="weather-data__high__unit forecast-high-unit-5"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-5"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-6">Date</h3>
-          <i class="icon forecast-icon-6"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-6"></span>
-              <span class="weather-data__low__unit forecast-low-unit-6"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-6">Date</h3>
+              <i class="icon forecast-icon-6"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-6"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-6"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-6"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-6"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-6"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-6"></span>
-              <span class="weather-data__high__unit forecast-high-unit-6"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-6"></div>
           </div>
-        </div>
-        <div>
-          <h3 class="date-7">Date</h3>
-          <i class="icon forecast-icon-7"></i>
-          <div class="weather-data">
-            <div class="weather-data__low">
-              <span class="weather-data__low__number forecast-low-number-7"></span>
-              <span class="weather-data__low__unit forecast-low-unit-7"></span>
-              low
+          <div class="row__1 row__small-1-2 row__medium-1-7">
+            <div class="weather-box">
+              <h3 class="weather-box__heading date-7">Date</h3>
+              <i class="icon forecast-icon-7"></i>
+              <div class="weather-data">
+                <div class="weather-data__low">
+                  <span class="weather-data__low__number forecast-low-number-7"></span>
+                  <span class="weather-data__low__unit forecast-low-unit-7"></span>
+                  low
+                </div>
+                <div class="weather-data__high">
+                  <span class="weather-data__high__number forecast-high-number-7"></span>
+                  <span class="weather-data__high__unit forecast-high-unit-7"></span>
+                  high
+                </div>
+                <div class="weather-data__description forecast-description-7"></div>
+              </div>
             </div>
-            <div class="weather-data__high">
-              <span class="weather-data__high__number forecast-high-number-7"></span>
-              <span class="weather-data__high__unit forecast-high-unit-7"></span>
-              high
-            </div>
-            <div class="weather-data__description forecast-description-7"></div>
           </div>
         </div>
       </div>
