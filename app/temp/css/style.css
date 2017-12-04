@@ -1,93 +1,106 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
 /* Do not edit modules/_sprite directly
 as it is generated automatically by Gulp.
 Instead edit gulp/templates/sprite */
 
-    .icon {
+.icon {
       background-image: url('../../assets/images/sprites/sprite-385e69e6.svg');
     }
 
-    .no-svg.icon {
+.no-svg.icon {
       background-image: url('../../assets/images/sprites/sprite-385e69e6.png');
     }
 
-    .icon--clear-day {
+.icon--clear-day {
     width: 102px;
     height: 102px;
     background-position: 33.333333333333336% 0;
   }
 
-    .icon--clear-night {
+.icon--clear-night {
     width: 102px;
     height: 102px;
     background-position: 0 66.66666666666667%;
   }
 
-    .icon--cloudy {
+.icon--cloudy {
     width: 102px;
     height: 102px;
     background-position: 0 33.333333333333336%;
   }
 
-    .icon--fog {
+.icon--fog {
     width: 102px;
     height: 102px;
     background-position: 33.333333333333336% 33.333333333333336%;
   }
 
-    .icon--hail {
+.icon--hail {
     width: 102px;
     height: 102px;
     background-position: 66.66666666666667% 0;
   }
 
-    .icon--partly-cloudy-day {
+.icon--partly-cloudy-day {
     width: 102px;
     height: 102px;
     background-position: 66.66666666666667% 33.333333333333336%;
   }
 
-    .icon--partly-cloudy-night {
+.icon--partly-cloudy-night {
     width: 102px;
     height: 102px;
     background-position: 0 0;
   }
 
-    .icon--rain {
+.icon--rain {
     width: 102px;
     height: 102px;
     background-position: 33.333333333333336% 66.66666666666667%;
   }
 
-    .icon--sleet {
+.icon--sleet {
     width: 102px;
     height: 102px;
     background-position: 66.66666666666667% 66.66666666666667%;
   }
 
-    .icon--snow {
+.icon--snow {
     width: 102px;
     height: 102px;
     background-position: 100% 0;
   }
 
-    .icon--thunderstorm {
+.icon--thunderstorm {
     width: 102px;
     height: 102px;
     background-position: 100% 33.333333333333336%;
   }
 
-    .icon--tornado {
+.icon--tornado {
     width: 102px;
     height: 102px;
     background-position: 100% 66.66666666666667%;
   }
 
-    .icon--wind {
+.icon--wind {
     width: 102px;
     height: 102px;
     background-position: 0 100%;
   }
 
-    .icon {
-  display: block;
-}
+.weather-box__heading {
+    font-weight: 300;
+  }
+
+.weather-box .icon {
+    display: block;
+  }

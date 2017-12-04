@@ -1,0 +1,10 @@
+.weather-box {
+
+  &__heading {
+    font-weight: 300;
+  }
+
+  & .icon {
+    display: block;
+  }
+}
