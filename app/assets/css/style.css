@@ -1,5 +1,5 @@
 @import "normalize.css";
-@import "global/_variables";
-@import "global/_base";
+@import "base/_variables";
+@import "base/_global";
 @import "modules/_sprite";
 @import "modules/_weather-box";

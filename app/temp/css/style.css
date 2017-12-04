@@ -450,6 +450,10 @@ template {
   display: none;
 }
 
+/* Color Palette */
+
+/* Text */
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -457,6 +461,11 @@ template {
 
 html {
   font-family: 'Lato', sans-serif;
+  color: rgba(0,0,0,.875);
+}
+
+a {
+  color: #c43c00;
 }
 
 /* Do not edit modules/_sprite directly

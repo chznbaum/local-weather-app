@@ -1,0 +1,20 @@
+/* Color Palette */
+
+$primaryColor: #1976d2;
+$primaryLight: #63a4ff;
+$primaryDark: #004ba0;
+$accentColor: #ff6d00;
+$accentLight: #ff9e40;
+$accentDark: #c43c00;
+
+/* Text */
+
+$fontFamily: 'Lato', sans-serif;
+$fontDarkPrimary: rgba(0,0,0,.875);
+$fontDarkSecondary: rgba(0,0,0,.54);
+$fontDarkHint: rgba(0,0,0,.38);
+$fontDarkDividers: rgba(0,0,0,.12);
+$fontLightPrimary: rgba(255,255,255,1);
+$fontLightSecondary: rgba(255,255,255,.7);
+$fontLightHint: rgba(255,255,255,.5);
+$fontLightDividers: rgba(255,255,255,.12);
