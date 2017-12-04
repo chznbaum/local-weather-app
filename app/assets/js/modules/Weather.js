@@ -35,11 +35,11 @@ class Weather {
   }
 
   iplocate(that) {
-    const iplocateUrl = 'http://ip-api.com/json';
+    const iplocateUrl = 'https://ipapi.co/json/';
     $.getJSON(iplocateUrl, function(data) {
       const coordinates = {
-        latitude: data.lat,
-        longitude: data.lon
+        latitude: data.latitude,
+        longitude: data.longitude
       }
       that.geocode(coordinates);
       that.weatherLookup(coordinates);
