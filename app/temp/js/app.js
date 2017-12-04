@@ -140,11 +140,11 @@ var Weather = function () {
   }, {
     key: 'iplocate',
     value: function iplocate(that) {
-      var iplocateUrl = 'http://ip-api.com/json';
+      var iplocateUrl = 'https://ipapi.co/json/';
       _jquery2.default.getJSON(iplocateUrl, function (data) {
         var coordinates = {
-          latitude: data.lat,
-          longitude: data.lon
+          latitude: data.latitude,
+          longitude: data.longitude
         };
         that.geocode(coordinates);
         that.weatherLookup(coordinates);
