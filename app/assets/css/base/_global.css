@@ -4,7 +4,9 @@
 
 html {
   font-family: $fontFamily;
+  background-color: rgba($primaryLight, .3);
   color: $fontDarkPrimary;
+  min-height: 100%;
 }
 
 a {

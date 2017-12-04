@@ -1,3 +1,11 @@
+@define-mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
 @define-mixin atSmall {
   @media (min-width: 30.125rem) {
     @mixin-content;
@@ -11,7 +19,7 @@
 }
 
 @define-mixin atLarge {
-  @media (min-width: 63.125rem) {
+  @media (min-width: 75rem) {
     @mixin-content;
   }
 }

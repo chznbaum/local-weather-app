@@ -1,0 +1,32 @@
+.section-heading {
+  font-weight: 400;
+  text-align: center;
+
+  &--primary-dark {
+    color: $primaryDark;
+  }
+
+  &--smaller {
+    font-size: 1.5rem;
+
+    @mixin atMedium {
+      font-size: 1.25rem;
+    }
+
+    @mixin atLarge {
+      font-size: 1.5rem;
+    }
+  }
+
+  &--bigger {
+    font-size: 2rem;
+
+    @mixin atMedium {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--no-margin {
+    margin: 0;
+  }
+}
