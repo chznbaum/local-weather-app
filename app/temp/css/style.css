@@ -920,6 +920,7 @@ Instead edit gulp/templates/sprite */
 .footer__text {
     display: block;
     margin-bottom: 1rem;
+    text-shadow: 0 0.05rem 0.1rem rgba(0,0,0,.3);
   }
 
 @media (min-width: 50rem) {
