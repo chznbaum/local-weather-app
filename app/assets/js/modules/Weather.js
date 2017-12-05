@@ -4,7 +4,17 @@ import { fail } from 'assert';
 
 class Weather {
   constructor() {
+    this.fahrenheit = true;
+    this.fahrenheitButton = $('.button--fahrenheit');
+    this.celsiusButton = $('.button--celsius');
+    this.conversionList = $('.to-convert');
+    this.events();
     this.checkBrowser();
+  }
+
+  events() {
+    this.fahrenheitButton.click(this.toFahrenheit.bind(this));
+    this.celsiusButton.click(this.toCelsius.bind(this));
   }
 
   checkBrowser() {
@@ -171,6 +181,38 @@ class Weather {
     printCurrent();
     printForecast();
     dismissModal();
+  }
+
+  toFahrenheit() {
+    const that = this;
+    if (this.fahrenheit == true) {
+      return;
+    } else {
+      $.each(this.conversionList, function(conversionItemNumber, conversionItem) {
+        const tempFahrenheit = conversionItem.fahrenheitValue;
+        conversionItem.textContent = `${tempFahrenheit}°`;
+      });
+      this.celsiusButton.removeClass('button--accent-light');
+      this.fahrenheitButton.addClass('button--accent-light');
+      this.fahrenheit = true;
+    }
+  }
+
+  toCelsius() {
+    const that = this;
+    if (this.fahrenheit == false) {
+      return;
+    } else {
+      $.each(this.conversionList, function(conversionItemNumber, conversionItem) {
+        const tempFahrenheit = parseInt(conversionItem.innerHTML, 10);
+        const tempCelsius = parseInt((tempFahrenheit - 32) * (5 / 9));
+        conversionItem.textContent = `${tempCelsius}°`;
+        conversionItem.fahrenheitValue = tempFahrenheit;
+      });
+      this.fahrenheitButton.removeClass('button--accent-light');
+      this.celsiusButton.addClass('button--accent-light');
+      this.fahrenheit = false;
+    }
   }
 }
 
