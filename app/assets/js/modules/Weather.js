@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import moment from 'moment';
+import { fail } from 'assert';
 
 class Weather {
   constructor() {
@@ -70,12 +71,12 @@ class Weather {
     const printPlaces = {
       current: {
         icon: $('.current-icon'),
-        unit: [
+        /*unit: [
           $('.current-temperature-unit'),
           $('.current-low-unit'),
           $('.current-high-unit'),
           $('.current-feels-like-unit')
-        ],
+        ],*/
         temperature: $('.current-temperature-number'),
         low: $('.current-low-number'),
         high: $('.current-high-number'),
@@ -86,10 +87,10 @@ class Weather {
         summary: '.forecast-summary',
         date: '.date-',
         icon: '.forecast-icon-',
-        unit: [
+        /*unit: [
           '.forecast-low-unit-',
           '.forecast-high-unit-'
-        ],
+        ],*/
         low: '.forecast-low-number-',
         high: '.forecast-high-number-',
         description: '.forecast-description-'
@@ -97,19 +98,21 @@ class Weather {
     }
 
     function printCurrent() {
-      printPlaces.current.unit.forEach(function(element) {
+      /*printPlaces.current.unit.forEach(function(element) {
         element.html('°F');
-      });
+      });*/
       printPlaces.current.icon.addClass(`icon--${data.currently.icon}`);
-      printPlaces.current.temperature.html(parseInt(data.currently.temperature));
+      printPlaces.current.temperature.html(
+        `${parseInt(data.currently.temperature)}°`
+        );
       printPlaces.current.low.html(
-        parseInt(data.daily.data[0].temperatureLow)
+        `${parseInt(data.daily.data[0].temperatureLow)}°`
       );
       printPlaces.current.high.html(
-        parseInt(data.daily.data[0].temperatureHigh)
+        `${parseInt(data.daily.data[0].temperatureHigh)}°`
       );
       printPlaces.current.feelsLike.html(
-        parseInt(data.currently.apparentTemperature)
+        `${parseInt(data.currently.apparentTemperature)}°`
       );
       printPlaces.current.description.html(`${data.currently.summary}`);
       if (data.currently.nearestStormDistance > 0) {
@@ -151,25 +154,27 @@ class Weather {
       for (day = 1; day < 8; day++) {
         const forecastDate = $(`${printPlaces.forecast.date}${day}`);
         const forecastIcon = $(`${printPlaces.forecast.icon}${day}`);
-        const forecastUnit = [
+        /*const forecastUnit = [
           $(`${printPlaces.forecast.unit[0]}${day}`),
           $(`${printPlaces.forecast.unit[1]}${day}`)
-        ];
+        ];*/
         const forecastLow = $(`${printPlaces.forecast.low}${day}`);
         const forecastHigh = $(`${printPlaces.forecast.high}${day}`);
         const forecastDescription = $(`${printPlaces.forecast.description}${day}`);
         const date = new Date(data.daily.data[day].time * 1000);
         const formattedDate = moment(date).format('dddd');
         forecastDate.html(formattedDate);
-        forecastIcon.addClass(`icon--${data.daily.data[day].icon}`);
-        forecastUnit.forEach(function(element) {
-          element.html('°F');
-        });
-        forecastLow.html(
-          parseInt(data.daily.data[day].temperatureLow)
+        forecastIcon.addClass(
+          `icon--${data.daily.data[day].icon}`
         );
-        forecastHigh.html(parseInt(
-          data.daily.data[day].temperatureHigh)
+        /*forecastUnit.forEach(function(element) {
+          element.html('°F');
+        });*/
+        forecastLow.html(
+          `${parseInt(data.daily.data[day].temperatureLow)}°`
+        );
+        forecastHigh.html(
+          `${parseInt(data.daily.data[day].temperatureHigh)}°`
         );
         forecastDescription.html(`${data.daily.data[day].summary}`);
       }
