@@ -12,6 +12,7 @@ class Weather {
     if (navigator && navigator.geolocation) {
       this.geolocate();
     } else {
+      // Fall back to IP location
       that.iplocate(that);
     }
   }
@@ -31,7 +32,9 @@ class Weather {
       this.weatherLookup(coordinates);
     }
     function error(error) {
-      console.log(error);that.iplocate(that);
+      console.log(error);
+      // Fall back to IP location
+      that.iplocate(that);
     }
     navigator.geolocation.getCurrentPosition(success.bind(this), error, options);
   }
@@ -52,7 +55,6 @@ class Weather {
     const locationPlace = $('.locationDescription');
     const geocodeApi = 'AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s';
     const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${coordinates.latitude},${coordinates.longitude}&key=${geocodeApi}`;
-    let formattedLocation = '';
     $.getJSON(geocodeUrl, function(data) {
       locationPlace.html(data.results[2].formatted_address);
     });
@@ -69,14 +71,9 @@ class Weather {
 
   printWeather(data) {
     const printPlaces = {
+      unit: $('.unit'),
       current: {
         icon: $('.current-icon'),
-        /*unit: [
-          $('.current-temperature-unit'),
-          $('.current-low-unit'),
-          $('.current-high-unit'),
-          $('.current-feels-like-unit')
-        ],*/
         temperature: $('.current-temperature-number'),
         low: $('.current-low-number'),
         high: $('.current-high-number'),
@@ -87,10 +84,6 @@ class Weather {
         summary: '.forecast-summary',
         date: '.date-',
         icon: '.forecast-icon-',
-        /*unit: [
-          '.forecast-low-unit-',
-          '.forecast-high-unit-'
-        ],*/
         low: '.forecast-low-number-',
         high: '.forecast-high-number-',
         description: '.forecast-description-'
@@ -98,9 +91,6 @@ class Weather {
     }
 
     function printCurrent() {
-      /*printPlaces.current.unit.forEach(function(element) {
-        element.html('°F');
-      });*/
       printPlaces.current.icon.addClass(`icon--${data.currently.icon}`);
       printPlaces.current.temperature.html(
         `${parseInt(data.currently.temperature)}°`
@@ -118,28 +108,28 @@ class Weather {
       if (data.currently.nearestStormDistance > 0) {
         let nearestStormDirection;
         switch (true) {
-          case data.currently.nearestStormBearing > 337 || data.currently.nearestStormBearing < 23 : // North
+          case data.currently.nearestStormBearing > 337 || data.currently.nearestStormBearing < 23 :
             nearestStormDirection = 'north';
             break;
-          case data.currently.nearestStormBearing > 22 && data.currently.nearestStormBearing < 68 : // Northeeast
+          case data.currently.nearestStormBearing > 22 && data.currently.nearestStormBearing < 68 :
             nearestStormDirection = 'northeast';
             break;
-          case data.currently.nearestStormBearing > 67 && data.currently.nearestStormBearing < 113 : // East
+          case data.currently.nearestStormBearing > 67 && data.currently.nearestStormBearing < 113 :
             nearestStormDirection = 'east';
             break;
-          case data.currently.nearestStormBearing > 112 && data.currently.nearestStormBearing < 158 : // Southeast
+          case data.currently.nearestStormBearing > 112 && data.currently.nearestStormBearing < 158 :
             nearestStormDirection = 'southeast';
             break;
-          case data.currently.nearestStormBearing > 157 && data.currently.nearestStormBearing < 203 : // South
+          case data.currently.nearestStormBearing > 157 && data.currently.nearestStormBearing < 203 :
             nearestStormDirection = 'south';
             break;
-          case data.currently.nearestStormBearing > 202 && data.currently.nearestStormBearing < 248 : // Southwest
+          case data.currently.nearestStormBearing > 202 && data.currently.nearestStormBearing < 248 :
             nearestStormDirection = 'southwest';
             break;
-          case data.currently.nearestStormBearing > 247 && data.currently.nearestStormBearing < 293 : // West
+          case data.currently.nearestStormBearing > 247 && data.currently.nearestStormBearing < 293 :
             nearestStormDirection = 'west';
             break;
-          case data.currently.nearestStormBearing > 292 && data.currently.nearestStormBearing < 338 : // Northwest
+          case data.currently.nearestStormBearing > 292 && data.currently.nearestStormBearing < 338 :
             nearestStormDirection = 'northwest';
             break;
         }
@@ -154,10 +144,6 @@ class Weather {
       for (day = 1; day < 8; day++) {
         const forecastDate = $(`${printPlaces.forecast.date}${day}`);
         const forecastIcon = $(`${printPlaces.forecast.icon}${day}`);
-        /*const forecastUnit = [
-          $(`${printPlaces.forecast.unit[0]}${day}`),
-          $(`${printPlaces.forecast.unit[1]}${day}`)
-        ];*/
         const forecastLow = $(`${printPlaces.forecast.low}${day}`);
         const forecastHigh = $(`${printPlaces.forecast.high}${day}`);
         const forecastDescription = $(`${printPlaces.forecast.description}${day}`);
@@ -167,9 +153,6 @@ class Weather {
         forecastIcon.addClass(
           `icon--${data.daily.data[day].icon}`
         );
-        /*forecastUnit.forEach(function(element) {
-          element.html('°F');
-        });*/
         forecastLow.html(
           `${parseInt(data.daily.data[day].temperatureLow)}°`
         );

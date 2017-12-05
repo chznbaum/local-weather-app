@@ -16078,6 +16078,7 @@ var Weather = function () {
       if (navigator && navigator.geolocation) {
         this.geolocate();
       } else {
+        // Fall back to IP location
         that.iplocate(that);
       }
     }
@@ -16098,7 +16099,9 @@ var Weather = function () {
         this.weatherLookup(coordinates);
       }
       function error(error) {
-        console.log(error);that.iplocate(that);
+        console.log(error);
+        // Fall back to IP location
+        that.iplocate(that);
       }
       navigator.geolocation.getCurrentPosition(success.bind(this), error, options);
     }
@@ -16121,7 +16124,6 @@ var Weather = function () {
       var locationPlace = (0, _jquery2.default)('.locationDescription');
       var geocodeApi = 'AIzaSyDC6U1aZXcePTAR20iwRKIuJ26LqXX6t5s';
       var geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + coordinates.latitude + ',' + coordinates.longitude + '&key=' + geocodeApi;
-      var formattedLocation = '';
       _jquery2.default.getJSON(geocodeUrl, function (data) {
         locationPlace.html(data.results[2].formatted_address);
       });
@@ -16140,14 +16142,9 @@ var Weather = function () {
     key: 'printWeather',
     value: function printWeather(data) {
       var printPlaces = {
+        unit: (0, _jquery2.default)('.unit'),
         current: {
           icon: (0, _jquery2.default)('.current-icon'),
-          /*unit: [
-            $('.current-temperature-unit'),
-            $('.current-low-unit'),
-            $('.current-high-unit'),
-            $('.current-feels-like-unit')
-          ],*/
           temperature: (0, _jquery2.default)('.current-temperature-number'),
           low: (0, _jquery2.default)('.current-low-number'),
           high: (0, _jquery2.default)('.current-high-number'),
@@ -16158,10 +16155,6 @@ var Weather = function () {
           summary: '.forecast-summary',
           date: '.date-',
           icon: '.forecast-icon-',
-          /*unit: [
-            '.forecast-low-unit-',
-            '.forecast-high-unit-'
-          ],*/
           low: '.forecast-low-number-',
           high: '.forecast-high-number-',
           description: '.forecast-description-'
@@ -16169,9 +16162,6 @@ var Weather = function () {
       };
 
       function printCurrent() {
-        /*printPlaces.current.unit.forEach(function(element) {
-          element.html('°F');
-        });*/
         printPlaces.current.icon.addClass('icon--' + data.currently.icon);
         printPlaces.current.temperature.html(parseInt(data.currently.temperature) + '\xB0');
         printPlaces.current.low.html(parseInt(data.daily.data[0].temperatureLow) + '\xB0');
@@ -16182,35 +16172,27 @@ var Weather = function () {
           var nearestStormDirection = void 0;
           switch (true) {
             case data.currently.nearestStormBearing > 337 || data.currently.nearestStormBearing < 23:
-              // North
               nearestStormDirection = 'north';
               break;
             case data.currently.nearestStormBearing > 22 && data.currently.nearestStormBearing < 68:
-              // Northeeast
               nearestStormDirection = 'northeast';
               break;
             case data.currently.nearestStormBearing > 67 && data.currently.nearestStormBearing < 113:
-              // East
               nearestStormDirection = 'east';
               break;
             case data.currently.nearestStormBearing > 112 && data.currently.nearestStormBearing < 158:
-              // Southeast
               nearestStormDirection = 'southeast';
               break;
             case data.currently.nearestStormBearing > 157 && data.currently.nearestStormBearing < 203:
-              // South
               nearestStormDirection = 'south';
               break;
             case data.currently.nearestStormBearing > 202 && data.currently.nearestStormBearing < 248:
-              // Southwest
               nearestStormDirection = 'southwest';
               break;
             case data.currently.nearestStormBearing > 247 && data.currently.nearestStormBearing < 293:
-              // West
               nearestStormDirection = 'west';
               break;
             case data.currently.nearestStormBearing > 292 && data.currently.nearestStormBearing < 338:
-              // Northwest
               nearestStormDirection = 'northwest';
               break;
           }
@@ -16225,10 +16207,6 @@ var Weather = function () {
         for (day = 1; day < 8; day++) {
           var forecastDate = (0, _jquery2.default)('' + printPlaces.forecast.date + day);
           var forecastIcon = (0, _jquery2.default)('' + printPlaces.forecast.icon + day);
-          /*const forecastUnit = [
-            $(`${printPlaces.forecast.unit[0]}${day}`),
-            $(`${printPlaces.forecast.unit[1]}${day}`)
-          ];*/
           var forecastLow = (0, _jquery2.default)('' + printPlaces.forecast.low + day);
           var forecastHigh = (0, _jquery2.default)('' + printPlaces.forecast.high + day);
           var forecastDescription = (0, _jquery2.default)('' + printPlaces.forecast.description + day);
@@ -16236,9 +16214,6 @@ var Weather = function () {
           var formattedDate = (0, _moment2.default)(date).format('dddd');
           forecastDate.html(formattedDate);
           forecastIcon.addClass('icon--' + data.daily.data[day].icon);
-          /*forecastUnit.forEach(function(element) {
-            element.html('°F');
-          });*/
           forecastLow.html(parseInt(data.daily.data[day].temperatureLow) + '\xB0');
           forecastHigh.html(parseInt(data.daily.data[day].temperatureHigh) + '\xB0');
           forecastDescription.html('' + data.daily.data[day].summary);
