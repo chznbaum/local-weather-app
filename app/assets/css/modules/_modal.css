@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255,255,255,.9);
+  z-index: 5;
+  text-align: center;
+
+  .flexbox & {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--dismissed {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  & .icon {
+    display: block;
+    margin: 0 auto;
+    animation: locating 3s linear infinite;
+  }
+}

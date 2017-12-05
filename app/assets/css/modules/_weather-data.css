@@ -3,12 +3,7 @@
 
   &__temperature {
     display: inline-block;
-    font-size: 2rem;
-    line-height: 7.5rem;
-    height: 8rem;
-    width: 8rem;
-    border: solid 6px $fontDarkPrimary;
-    border-radius: 50%;
+    font-size: 4.5rem;
 
     &__number {
       font-weight: 400;
@@ -16,18 +11,13 @@
   }
 
   &__low {
-    font-size: 1.75rem;
+    font-size: 2rem;
     display: inline-block;
     padding-right: .5rem;
     line-height: 1rem;
 
     @mixin atMedium {
-      font-size: 1.5rem;
-    }
-
-    &--with-temp {
-      position: relative;
-      top: .5rem;
+      font-size: 1.75rem;
     }
 
     &__measurement {
@@ -45,18 +35,13 @@
   }
 
   &__high {
-    font-size: 1.75rem;
+    font-size: 2rem;
     display: inline-block;
     padding-left: .5rem;
     line-height: 1rem;
 
     @mixin atMedium {
-      font-size: 1.5rem;
-    }
-
-    &--with-temp {
-      position: relative;
-      top: .5rem;
+      font-size: 1.75rem;
     }
 
     &__measurement {
