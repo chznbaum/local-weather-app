@@ -794,6 +794,12 @@ Instead edit gulp/templates/sprite */
   margin: 1rem 0;
 }
 
+.weather-box--narrow {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .weather-box .icon {
     display: block;
     margin: 0 auto;
@@ -801,18 +807,18 @@ Instead edit gulp/templates/sprite */
             transform: scale(1.25);
   }
 
+.weather-box .icon.current-icon {
+      -webkit-transform: scale(2);
+              transform: scale(2);
+    }
+
 .weather-data {
   font-weight: 300;
 }
 
 .weather-data__temperature {
     display: inline-block;
-    font-size: 2rem;
-    line-height: 7.5rem;
-    height: 8rem;
-    width: 8rem;
-    border: solid 6px rgba(0,0,0,.875);
-    border-radius: 50%;
+    font-size: 4.5rem;
   }
 
 .weather-data__temperature__number {
@@ -820,7 +826,7 @@ Instead edit gulp/templates/sprite */
     }
 
 .weather-data__low {
-    font-size: 1.75rem;
+    font-size: 2rem;
     display: inline-block;
     padding-right: .5rem;
     line-height: 1rem;
@@ -829,14 +835,9 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 50rem) {
 
 .weather-data__low {
-      font-size: 1.5rem
+      font-size: 1.75rem
   }
   }
-
-.weather-data__low--with-temp {
-      position: relative;
-      top: .5rem;
-    }
 
 .weather-data__low__measurement {
       display: block;
@@ -852,7 +853,7 @@ Instead edit gulp/templates/sprite */
     }
 
 .weather-data__high {
-    font-size: 1.75rem;
+    font-size: 2rem;
     display: inline-block;
     padding-left: .5rem;
     line-height: 1rem;
@@ -861,14 +862,9 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 50rem) {
 
 .weather-data__high {
-      font-size: 1.5rem
+      font-size: 1.75rem
   }
   }
-
-.weather-data__high--with-temp {
-      position: relative;
-      top: .5rem;
-    }
 
 .weather-data__high__measurement {
       display: block;
@@ -906,6 +902,10 @@ Instead edit gulp/templates/sprite */
 
 .generic-content-container--centered {
     text-align: center;
+  }
+
+.generic-content-container--bigger p {
+    font-size: 1.5rem;
   }
 
 .footer {
