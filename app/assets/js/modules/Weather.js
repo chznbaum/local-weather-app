@@ -163,8 +163,14 @@ class Weather {
       }
     }
 
+    function dismissModal() {
+      const modal = $('.modal');
+      modal.addClass('modal--dismissed');
+    }
+
     printCurrent();
     printForecast();
+    dismissModal();
   }
 }
 

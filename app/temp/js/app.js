@@ -16220,8 +16220,14 @@ var Weather = function () {
         }
       }
 
+      function dismissModal() {
+        var modal = (0, _jquery2.default)('.modal');
+        modal.addClass('modal--dismissed');
+      }
+
       printCurrent();
       printForecast();
+      dismissModal();
     }
   }]);
 

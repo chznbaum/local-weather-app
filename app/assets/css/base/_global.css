@@ -12,3 +12,9 @@ html {
 a {
   color: $accentDark;
 }
+
+@keyframes locating {
+  100% {
+    transform: rotate(360deg);
+  }
+}
