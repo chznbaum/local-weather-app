@@ -732,6 +732,7 @@ Instead edit gulp/templates/sprite */
   }
 
 .button {
+  border: none;
   background-color: #1976d2;
   color: rgba(255,255,255,1);
   text-decoration: none;
@@ -739,6 +740,7 @@ Instead edit gulp/templates/sprite */
   padding: .75rem 1.2rem;
   display: inline-block;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .button--accent-light {

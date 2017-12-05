@@ -16068,10 +16068,21 @@ var Weather = function () {
   function Weather() {
     _classCallCheck(this, Weather);
 
+    this.fahrenheit = true;
+    this.fahrenheitButton = (0, _jquery2.default)('.button--fahrenheit');
+    this.celsiusButton = (0, _jquery2.default)('.button--celsius');
+    this.conversionList = (0, _jquery2.default)('.to-convert');
+    this.events();
     this.checkBrowser();
   }
 
   _createClass(Weather, [{
+    key: 'events',
+    value: function events() {
+      this.fahrenheitButton.click(this.toFahrenheit.bind(this));
+      this.celsiusButton.click(this.toCelsius.bind(this));
+    }
+  }, {
     key: 'checkBrowser',
     value: function checkBrowser() {
       var that = this;
@@ -16228,6 +16239,40 @@ var Weather = function () {
       printCurrent();
       printForecast();
       dismissModal();
+    }
+  }, {
+    key: 'toFahrenheit',
+    value: function toFahrenheit() {
+      var that = this;
+      if (this.fahrenheit == true) {
+        return;
+      } else {
+        _jquery2.default.each(this.conversionList, function (conversionItemNumber, conversionItem) {
+          var tempFahrenheit = conversionItem.fahrenheitValue;
+          conversionItem.textContent = tempFahrenheit + '\xB0';
+        });
+        this.celsiusButton.removeClass('button--accent-light');
+        this.fahrenheitButton.addClass('button--accent-light');
+        this.fahrenheit = true;
+      }
+    }
+  }, {
+    key: 'toCelsius',
+    value: function toCelsius() {
+      var that = this;
+      if (this.fahrenheit == false) {
+        return;
+      } else {
+        _jquery2.default.each(this.conversionList, function (conversionItemNumber, conversionItem) {
+          var tempFahrenheit = parseInt(conversionItem.innerHTML, 10);
+          var tempCelsius = parseInt((tempFahrenheit - 32) * (5 / 9));
+          conversionItem.textContent = tempCelsius + '\xB0';
+          conversionItem.fahrenheitValue = tempFahrenheit;
+        });
+        this.fahrenheitButton.removeClass('button--accent-light');
+        this.celsiusButton.addClass('button--accent-light');
+        this.fahrenheit = false;
+      }
     }
   }]);
 

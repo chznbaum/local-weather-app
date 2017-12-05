@@ -14,7 +14,7 @@ copyright: Chazona Baum 2017
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/styles-baf78c8cae.css"/>
+    <link rel="stylesheet" href="assets/css/styles-0d303659d5.css"/>
 
     <script src="assets/js/vendor-330099d583.js"></script>
   </head>
@@ -24,6 +24,9 @@ copyright: Chazona Baum 2017
         <h1 class="section-heading section-heading--bigger">Local Weather</h1>
         <div class="generic-content-container generic-content-container--centered generic-content-container--bigger">
           <p class="locationDescription"></p>
+          <div></div>
+            <button class="button button--large button--fahrenheit button--accent-light">°F</button><button class="button button--large button--celsius">°C</button>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -33,24 +36,23 @@ copyright: Chazona Baum 2017
           <div class="weather-data">
             <div class="weather-data__low weather-data__low--with-temp">
               <span class="weather-data__low__measurement">
-                <span class="weather-data__low__measurement__number current-low-number"></span>
+                <span class="weather-data__low__measurement__number to-convert current-low-number"></span>
               </span>
               <span class="weather-data__low__description">low</span>
             </div>
             <div class="weather-data__temperature">
-              <span class="weather-data__temperature__number current-temperature-number"></span>
+              <span class="weather-data__temperature__number to-convert current-temperature-number"></span>
             </div>
             <div class="weather-data__high weather-data__high--with-temp">
               <span class="weather-data__high__measurement">
-                <span class="weather-data__high__measurement__number current-high-number"></span>
+                <span class="weather-data__high__measurement__number to-convert current-high-number"></span>
               </span>
               <span class="weather-data__high__description">high</span>
             </div>
             <div class="weather-data__feels-like">
               Feels like 
-              <span class="weather-data__feels-like__number current-feels-like-number"></span>
+              <span class="weather-data__feels-like__number to-convert current-feels-like-number"></span>
             </div>
-            <div class="weather-data__feels-like"></div>
             <div class="weather-data__description current-description"></div>
           </div>
         </div>
@@ -68,13 +70,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-1"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-1"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-1"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-1"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -89,13 +91,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-2"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-2"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-2"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-2"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -110,13 +112,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-3"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-3"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-3"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-3"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -131,13 +133,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-4"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-4"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-4"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-4"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -152,13 +154,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-5"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-5"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-5"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-5"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -173,13 +175,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-6"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-6"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-6"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-6"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -194,13 +196,13 @@ copyright: Chazona Baum 2017
               <div class="weather-data">
                 <div class="weather-data__low">
                   <span class="weather-data__low__measurement">
-                    <span class="weather-data__low__measurement__number forecast-low-number-7"></span>
+                    <span class="weather-data__low__measurement__number to-convert forecast-low-number-7"></span>
                   </span>
                   <span class="weather-data__low__description">low</span>
                 </div>
                 <div class="weather-data__high">
                   <span class="weather-data__high__measurement">
-                    <span class="weather-data__high__measurement__number forecast-high-number-7"></span>
+                    <span class="weather-data__high__measurement__number to-convert forecast-high-number-7"></span>
                   </span>
                   <span class="weather-data__high__description">high</span>
                 </div>
@@ -230,7 +232,7 @@ copyright: Chazona Baum 2017
       </div>
     </div>
 
-    <script src="assets/js/app-af69f2fcb6.js"></script>
+    <script src="assets/js/app-c9f8238000.js"></script>
     
   </body>
 </html>
